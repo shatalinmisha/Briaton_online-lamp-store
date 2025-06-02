@@ -19,7 +19,7 @@
           <use xlink:href="images/sprite.svg#icon-logo"></use>
         </svg>
       </a>
-      <button class="header__catalog-btn" type="button">
+      <button class="header__catalog-btn" id="catalogButton" type="button">
         <svg class="header__logo" width="24" height="24" aria-hidden="true">
           <use xlink:href="images/sprite.svg#icon-menu"></use>
         </svg>
@@ -32,13 +32,13 @@
           <use xlink:href="images/sprite.svg#icon-location"></use>
         </svg>
         <span class="location__text">Ваш город:</span>
-        <button class="location__city" type="button">
-          <span class="location__city-name">Оренбург</span>
+        <button class="location__city" id="locationCityButton" type="button">
+          <span class="location__city-name" id="locationCityName">Оренбург</span>
           <svg class="location__arrow" width="9" height="6" aria-hidden="true">
             <use xlink:href="images/sprite.svg#icon-arrow-bottom"></use>
           </svg>
         </button>
-        <ul class="location__sublist">
+        <ul class="location__sublist" id="locationSublist">
           <li class="location__subitem">
             <button class="location__sublink" type="button">Москва</button>
           </li>
@@ -121,11 +121,11 @@
     </div>
 
     <!-- Catalog -->
-    <div class="header__catalog main-menu">
+    <div class="header__catalog main-menu" id="mainMenu">
       <div class="main-menu__wrapper">
         <div class="main-menu__heading">
           <h2 class="main-menu__title">Категории товаров</h2>
-          <button class="main-menu__close" type="button">
+          <button class="main-menu__close" id="mainMenuClose" type="button">
             <svg class="main-menu__icon" width="24" height="24" aria-hidden="true">
               <use xlink:href="images/sprite.svg#icon-close"></use>
             </svg>
