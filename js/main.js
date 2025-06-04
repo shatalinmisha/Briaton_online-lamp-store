@@ -1,4 +1,5 @@
 // import * as components from "./components/main-menu.js";
+import fetchDataAndCreateCards from "./components/fetchDataAndCreateCards.js";
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -30,4 +31,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const catalogContainer = document.querySelector('.catalog__list');
+    fetchDataAndCreateCards(catalogContainer);
+
+   
+
+    
 });
