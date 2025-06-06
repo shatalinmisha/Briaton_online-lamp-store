@@ -1,5 +1,4 @@
 
-
 // Получение пункта списка
 function getItemEl(classList) {
     const liEl = document.createElement('li');
