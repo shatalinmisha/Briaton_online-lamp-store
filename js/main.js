@@ -1,10 +1,14 @@
 // import * as components from "./components/main-menu.js";
-import loadProducts from "./components/loadProducts.js"
+import loadProducts from "./components/loadProducts.js";
 import applyFilters from "./components/applyFilters.js";
+import renderCartBasket from "./components/renderCartBasket.js";
+import updateCartCounter from "./components/updateCartCounter.js";
 
 window.addEventListener('DOMContentLoaded', async () => {
     await loadProducts();// загрузка и сохранение всех товаров
     applyFilters();// сразу применяем фильтрацию и сортировку
+    renderCartBasket();// Отображаем товары из localStorage при загрузке страницы
+    updateCartCounter(JSON.parse(localStorage.getItem('products')).length);// Обновляем счетчик при загрузке
     // Навешиваем фильтрацию на любые изменения чекбоксов/радио
     document.querySelectorAll('input[name="type"], input[name="status"]').forEach(input => {
         input.addEventListener('change', applyFilters);
@@ -40,9 +44,10 @@ window.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-
-
-
-
+    const basketButtonEl = document.querySelector('.header__user-btn');
+    basketButtonEl.addEventListener('click', function () {
+        const basketMenuEl = document.querySelector('.basket');
+        basketMenuEl.classList.toggle('basket--active');
+    });
 
 });

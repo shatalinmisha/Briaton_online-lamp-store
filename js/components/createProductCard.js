@@ -9,10 +9,10 @@ export default function createProductCard(cardEl, product) {
     const imgEl = components.getImagesEl('product-card__img', product.image, '436', '290', 'Изображение товара');
 
     const divMoreEl = components.getDivEl('product-card__more');
-    const linkBasketEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--icon']);
+    const linkBasketEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--icon'], product.id);
     const spanBasketEl = components.getSpanEl('btn__text', 'В корзину');
-    const svgBasketEl = components.getVectorGraphEl('24', '24', 'true', 'images/sprite.svg#icon-basket');
-    const linkMoreEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--secondary']);
+    const svgBasketEl = components.getVectorGraphEl('#','24', '24', 'true', 'images/sprite.svg#icon-basket');
+    const linkMoreEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--secondary'],  product.id);
     const spanMoreEl = components.getSpanEl('btn__text', 'Подробнее');
 
     const divInfoEl = components.getDivEl('product-card__info');
@@ -27,8 +27,8 @@ export default function createProductCard(cardEl, product) {
     const spanPriceAddEl = components.getSpanEl('product-card__price-add', ' ₽');
 
     const divTooltipEl = components.getDivEl('product-card__tooltip', 'tooltip');
-    const buttonTooltipEl = components.getButtonEl('tooltip__btn', 'tooltipBtn', 'Показать подсказку');
-    const svgTooltipEl = components.getVectorGraphEl('5', '10', 'true', 'images/sprite.svg#icon-i');
+    const buttonTooltipEl = components.getButtonEl('tooltip__btn', 'submit', 'tooltipBtn', product.id, 'Показать подсказку');
+    const svgTooltipEl = components.getVectorGraphEl('#','5', '10', 'true', 'images/sprite.svg#icon-i');
 
     const divTooltipContentEl = components.getDivEl('tooltip__content');
     const spanTooltipTitleEl = components.getSpanEl('tooltip__text', 'Наличие товара по городам:');

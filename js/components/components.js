@@ -25,10 +25,11 @@ function getImagesEl(classList, src, height, width, alt) {
 }
 
 // Получаем ссылку
-function getLinkEl(href, classListArray) {
+function getLinkEl(href, classListArray, dataId) {
     const linkEl = document.createElement('a');
     linkEl.href = href;
     linkEl.classList.add(...classListArray);
+    linkEl.setAttribute('data-id', dataId);
     return linkEl;
 }
 
@@ -41,8 +42,9 @@ function getSpanEl(classList, textContent) {
 }
 
 // Получаем формат векторной графики
-function getVectorGraphEl(width, height, ariaHidden, xlinkhref) {
+function getVectorGraphEl(classList, width, height, ariaHidden, xlinkhref) {
     const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgEl.classList.add(classList);
     svgEl.setAttribute('width', width);
     svgEl.setAttribute('height', height);
     svgEl.setAttribute('aria-hidden', ariaHidden);
@@ -64,12 +66,23 @@ function getHeadingEl(classList, textContent) {
 }
 
 // Получаем кнопку подсказки
-function getButtonEl (classList, id, ariaLabal) {
+function getButtonEl (classList, type, id, dataId, ariaLabal) {
     const buttonEl = document.createElement('button');
     buttonEl.classList.add(classList);
+    buttonEl.type = type;
     buttonEl.id = id;
     buttonEl.ariaLabel = ariaLabal;
+    buttonEl.setAttribute('data-id', dataId);
     return buttonEl;
+}
+
+function getButtonDelCartEl(classList, id, type, index) {
+    const buttonDelCartEl = document.createElement('button');
+    buttonDelCartEl.classList.add(classList);
+    buttonDelCartEl.id = id;
+    buttonDelCartEl.type = type;
+    buttonDelCartEl.setAttribute('data-index', index);
+    return buttonDelCartEl;
 }
 
 // Получаем список для городов с информацией о наличии товара
@@ -77,6 +90,13 @@ function getListEl(classList) {
     const listEl = document.createElement('ul');
     listEl.classList.add(classList);
     return listEl;
+}
+
+function getDivBasketEl (classList, textContent) {
+    const divBasketEl = document.createElement('div');
+    divBasketEl.classList.add(classList);
+    divBasketEl.textContent = textContent;
+    return divBasketEl;
 }
 
 export {
@@ -88,5 +108,7 @@ export {
     getVectorGraphEl,
     getHeadingEl,
     getButtonEl,
-    getListEl
+    getButtonDelCartEl,
+    getListEl,
+    getDivBasketEl
 }

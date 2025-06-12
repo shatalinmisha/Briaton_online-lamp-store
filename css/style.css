@@ -1454,12 +1454,19 @@ button {
   font-weight: 500;
   line-height: 16.8px;
 }
-.basket__close {
+.basket__item-close {
   padding: 0;
   width: 20px;
   height: 20px;
   background-color: transparent;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket__close-icon {
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1619,7 +1626,7 @@ button {
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
-  color: #9BE198;
+  color: #9be198;
   border: none;
 }
 .catalog__list {
@@ -1660,6 +1667,11 @@ button {
 }
 .catalog__pagination-link:not(:disabled) {
   color: #000000;
+}
+.catalog__pagination-link--active {
+  border: 1px solid #000000;
+  color: #fff;
+  pointer-events: none;
 }
 
 .catalog-form {
@@ -1723,6 +1735,10 @@ button {
 .custom-checkbox__field:checked + .custom-checkbox__label::before {
   background-color: #9BE198;
   border-color: #9BE198;
+}
+.custom-checkbox__field:disabled .custom-checkbox__label,
+.custom-checkbox__field:disabled .custom-checkbox__count {
+  color: #aaa;
 }
 .custom-checkbox__label {
   display: flex;

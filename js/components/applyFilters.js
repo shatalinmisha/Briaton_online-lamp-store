@@ -1,5 +1,5 @@
 import getSelectedTypes from "./getSelectedTypes.js";
-import { getProducts } from "./store.js";
+import { getProducts } from "./productStore.js";
 import isInStock from "./isInStock.js";
 import renderProducts from "./renderProducts.js";
 import renderPagination from "./renderPagination.js";
