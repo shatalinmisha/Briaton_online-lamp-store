@@ -2082,9 +2082,6 @@ button {
 .accordion__btn--active .accordion__btn-icon::after {
   opacity: 0;
 }
-.accordion__btn--active + .accordion__content {
-  display: flex;
-}
 .accordion__btn-text {
   font-size: 24px;
   font-weight: 500;
@@ -2114,7 +2111,9 @@ button {
   transition: opacity ease-in 0.3s;
 }
 .accordion__content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 .accordion__inner {
   padding: 12px 0 0;

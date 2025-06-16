@@ -37,9 +37,9 @@
         opacity: 0;
       }
 
-      + #{$root}__content {
-        display: flex;
-      }
+      // + #{$root}__content {
+      //   display: flex;
+      // } //свойство для отображения но грубое
     }
   }
 
@@ -77,7 +77,10 @@
   }
 
   &__content {
-    display: none;
+    // display: none; // просто скрывает
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease; // создает плавность скрытия и отображения
   }
 
   &__inner {

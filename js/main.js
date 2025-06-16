@@ -50,4 +50,25 @@ window.addEventListener('DOMContentLoaded', async () => {
         basketMenuEl.classList.toggle('basket--active');
     });
 
+    const accordionBtnEl = document.querySelectorAll('.accordion__btn');
+    accordionBtnEl.forEach((button) => {
+        button.addEventListener('click', function() {
+            const isActive = this.classList.contains('accordion__btn--active');
+
+            // Сначала закрываем все элементы
+            accordionBtnEl.forEach((btn) => {
+                btn.classList.remove('accordion__btn--active');
+                btn.nextElementSibling.style.maxHeight = null;
+            });
+
+            // Если текущий не был активным - открываем его
+            if(!isActive) {
+                this.classList.add('accordion__btn--active');
+                const content = this.nextElementSibling;
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+
+        });
+    });
+
 });
