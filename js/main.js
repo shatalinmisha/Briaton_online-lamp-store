@@ -3,6 +3,9 @@ import loadProducts from "./components/loadProducts.js";
 import applyFilters from "./components/applyFilters.js";
 import renderCartBasket from "./components/renderCartBasket.js";
 import updateCartCounter from "./components/updateCartCounter.js";
+import { justValidateEl } from "./components/justValidate.js";
+import addClient from "./components/addClient.js";
+
 
 window.addEventListener('DOMContentLoaded', async () => {
     await loadProducts();// загрузка и сохранение всех товаров
@@ -15,6 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     });
     // сортировка
     document.querySelector('.catalog__sort-select').addEventListener('change', applyFilters);
+
 
     const catalogButtonEl = document.querySelector('#catalogButton');
     catalogButtonEl.addEventListener('click', function () {
@@ -52,7 +56,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     const accordionBtnEl = document.querySelectorAll('.accordion__btn');
     accordionBtnEl.forEach((button) => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const isActive = this.classList.contains('accordion__btn--active');
 
             // Сначала закрываем все элементы
@@ -62,13 +66,43 @@ window.addEventListener('DOMContentLoaded', async () => {
             });
 
             // Если текущий не был активным - открываем его
-            if(!isActive) {
+            if (!isActive) {
                 this.classList.add('accordion__btn--active');
                 const content = this.nextElementSibling;
                 content.style.maxHeight = content.scrollHeight + 'px';
             }
 
         });
+    });
+
+    justValidateEl()
+    const formEl = document.querySelector('#questionsForm');
+    formEl.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let name = document.querySelector('#name').value.trim();
+        let email = document.querySelector('#email').value.trim();
+
+        let hasError = false;
+
+        const inputEl = document.querySelectorAll('input');
+
+        inputEl.forEach(input => {
+            if (input.value.trim() === "") {
+                hasError = true;
+            }
+        });
+
+        if (hasError) {
+            return
+        }
+
+        const client = {
+            name: name,
+            email: email,
+        }
+        formEl.reset();
+        addClient(client, email)
     });
 
 });

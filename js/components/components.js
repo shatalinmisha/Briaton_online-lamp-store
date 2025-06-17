@@ -6,10 +6,22 @@ function getItemEl(classList) {
     return liEl;
 }
 
+function getItemArrayEl(classListArray) {
+    const liEl = document.createElement('li');
+    liEl.classList.add(...classListArray);
+    return liEl;
+}
+
 // Получаем обёртку Div для карточки и внутренних блоков
 function getDivEl(classList) {
     const divEl = document.createElement('div');
     divEl.classList.add(classList);
+    return divEl;
+}
+// 
+function getDivArrayEl(classListArray) {
+    const divEl = document.createElement('div');
+    divEl.classList.add(...classListArray);
     return divEl;
 }
 
@@ -101,7 +113,9 @@ function getDivBasketEl (classList, textContent) {
 
 export {
     getItemEl,
+    getItemArrayEl,
     getDivEl,
+    getDivArrayEl,
     getImagesEl,
     getLinkEl,
     getSpanEl,

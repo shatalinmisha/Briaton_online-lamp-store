@@ -1,12 +1,12 @@
 import * as components from "./components.js";
 
-export default function createProductCard(cardEl, product) {
+export default function createProductsCardDay(cardEl, product) {
 
-    const liEl = components.getItemEl('catalog__item');
-    const divCardEl = components.getDivEl('product-card');
+    const liEl = components.getItemArrayEl(['day-products__item', 'swiper-slide']);
+    const divCardEl = components.getDivArrayEl(['product-card', 'product-card--small']);
 
     const divImgEl = components.getDivEl('product-card__visual');
-    const imgEl = components.getImagesEl('product-card__img', product.image, '436', '290', 'Изображение товара');
+    const imgEl = components.getImagesEl('product-card__img', product.image, '344', '290', 'Изображение товара');
 
     const divMoreEl = components.getDivEl('product-card__more');
     const linkBasketEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--icon'], product.id);
