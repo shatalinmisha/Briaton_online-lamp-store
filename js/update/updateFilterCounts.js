@@ -1,6 +1,6 @@
 
 export default async function updateFilterCounts() {
-    // Загружаем данные
+ // Загружаем данные
     const response = await fetch('./data/data.json');
     const data = await response.json();
 

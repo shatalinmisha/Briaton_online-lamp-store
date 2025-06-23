@@ -1,4 +1,4 @@
-import * as components from "./components.js";
+import * as components from "../../components/components.js";
 
 export default function creatingShoppingCart(cardEl, product, index) {
     

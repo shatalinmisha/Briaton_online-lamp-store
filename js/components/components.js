@@ -111,6 +111,7 @@ function getDivBasketEl (classList, textContent) {
     return divBasketEl;
 }
 
+
 export {
     getItemEl,
     getItemArrayEl,

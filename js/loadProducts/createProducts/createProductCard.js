@@ -1,4 +1,4 @@
-import * as components from "./components.js";
+import * as components from "../../components/components.js";
 
 export default function createProductCard(cardEl, product) {
 
@@ -10,6 +10,7 @@ export default function createProductCard(cardEl, product) {
 
     const divMoreEl = components.getDivEl('product-card__more');
     const linkBasketEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--icon'], product.id);
+
     const spanBasketEl = components.getSpanEl('btn__text', 'В корзину');
     const svgBasketEl = components.getVectorGraphEl('#','24', '24', 'true', 'images/sprite.svg#icon-basket');
     const linkMoreEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--secondary'],  product.id);
@@ -28,11 +29,11 @@ export default function createProductCard(cardEl, product) {
 
     const divTooltipEl = components.getDivArrayEl(['product-card__tooltip', 'tooltip']);
     const buttonTooltipEl = components.getButtonEl('tooltip__btn', 'submit', 'tooltipBtn', product.id, 'Показать подсказку');
+
     const svgTooltipEl = components.getVectorGraphEl('tooltip__icon','5', '10', 'true', 'images/sprite.svg#icon-i');
-
     const divTooltipContentEl = components.getDivEl('tooltip__content');
+    divTooltipContentEl.id = `tooltipContent-${product.id}`; // Уникальный ID для контента подсказки // возможно не надо
     const spanTooltipTitleEl = components.getSpanEl('tooltip__text', 'Наличие товара по городам:');
-
     const ulTooltipEl = components.getListEl('tooltip__list');
 
     // Создаем список городов из данных

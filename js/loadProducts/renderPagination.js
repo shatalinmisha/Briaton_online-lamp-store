@@ -1,4 +1,4 @@
-import setPage from "./setPage.js";
+import setPage from "../update/setPage.js";
 
 export default function renderPagination(totalPages, currentPage) {
     const container = document.querySelector('.catalog__pagination');
@@ -19,7 +19,7 @@ export default function renderPagination(totalPages, currentPage) {
         if (i === currentPage) {
             btnEl.classList.add('catalog__pagination-link--active'); // Добавим класс для активной страницы
         }
-
+ 
         btnEl.addEventListener('click', () => {
             setPage(i); // изменяет текущую страницу
         });

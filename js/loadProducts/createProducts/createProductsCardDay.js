@@ -1,4 +1,5 @@
-import * as components from "./components.js";
+import * as components from "../../components/components.js";
+import { fixtures } from "../../navigate/fixtures.js"
 
 export default function createProductsCardDay(cardEl, product) {
 
@@ -10,9 +11,10 @@ export default function createProductsCardDay(cardEl, product) {
 
     const divMoreEl = components.getDivEl('product-card__more');
     const linkBasketEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--icon'], product.id);
+
     const spanBasketEl = components.getSpanEl('btn__text', 'В корзину');
-    const svgBasketEl = components.getVectorGraphEl('#','24', '24', 'true', 'images/sprite.svg#icon-basket');
-    const linkMoreEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--secondary'],  product.id);
+    const svgBasketEl = components.getVectorGraphEl('#', '24', '24', 'true', 'images/sprite.svg#icon-basket');
+    const linkMoreEl = components.getLinkEl('#', ['product-card__link', 'btn', 'btn--secondary'], product.id);
     const spanMoreEl = components.getSpanEl('btn__text', 'Подробнее');
 
     const divInfoEl = components.getDivEl('product-card__info');
@@ -28,8 +30,8 @@ export default function createProductsCardDay(cardEl, product) {
 
     const divTooltipEl = components.getDivArrayEl(['product-card__tooltip', 'tooltip']);
     const buttonTooltipEl = components.getButtonEl('tooltip__btn', 'submit', 'tooltipBtn', product.id, 'Показать подсказку');
-    const svgTooltipEl = components.getVectorGraphEl('tooltip__icon','5', '10', 'true', 'images/sprite.svg#icon-i');
-
+    
+    const svgTooltipEl = components.getVectorGraphEl('tooltip__icon', '5', '10', 'true', 'images/sprite.svg#icon-i');
     const divTooltipContentEl = components.getDivEl('tooltip__content');
     const spanTooltipTitleEl = components.getSpanEl('tooltip__text', 'Наличие товара по городам:');
 

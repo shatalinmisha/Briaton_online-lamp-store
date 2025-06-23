@@ -1,7 +1,7 @@
-import creatingShoppingCart from "./creatingShoppingCart.js";
-import * as components from "./components.js";
-import attachDeleteHandlers from "./attachDeleteHandlers.js";
-import updateCartCounter from "./updateCartCounter.js";
+import creatingShoppingCart from "./createProducts/creatingShoppingCart.js";
+import * as components from "../components/components.js";
+import attachDeleteHandlers from "../attachHandler/attachDeleteHandlers.js";
+import updateCartCounter from "../update/updateCartCounter.js";
 
 export default function renderCartBasket(products = null) {
     // Блок корзина
