@@ -1,5 +1,5 @@
 import * as components from "../../components/components.js";
-import { fixtures } from "../../navigate/fixtures.js"
+
 
 export default function createProductsCardDay(cardEl, product) {
 
